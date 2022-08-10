@@ -2,6 +2,16 @@
 
 Alarm app where user can set alarm using gestures on clock hands and ability to see daily wake up reports.
 
+## Getting Started
+To build and run this project:
+
+1. Get Flutter [here](https://flutter.dev) if you don't already have it
+2. Clone this repository.
+3. `cd` into the repo folder.
+4. run `flutter run-android` or `flutter run-ios` to build the app.
+
+(Please note that a Mac with XCode is required to build for iOS)
+
 ## Screenshots
 <p float="left">
   <img src="https://user-images.githubusercontent.com/1904533/184033833-654ca009-9ef5-4dfa-aa8c-61e7f8c982c0.png" width="30%" />
@@ -10,6 +20,6 @@ Alarm app where user can set alarm using gestures on clock hands and ability to 
 </p>
 
 ## Demos
-<p float="left">
-  <video src="https://user-images.githubusercontent.com/1904533/184037174-8817b6da-ab54-4cbc-864e-9456b99c33de.mp4" width="50%">
-</p>
+| Android | iOS| 
+|------------|-------------| 
+|  <video src="https://user-images.githubusercontent.com/1904533/184037174-8817b6da-ab54-4cbc-864e-9456b99c33de.mp4"> |  <video src="https://user-images.githubusercontent.com/1904533/184037174-8817b6da-ab54-4cbc-864e-9456b99c33de.mp4">  |

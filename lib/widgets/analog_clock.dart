@@ -39,9 +39,10 @@ class _AnalogClockState extends State<AnalogClock> {
 
   void _onClockHandPanUpdate(
     DragUpdateDetails d,
+    AnalogClockHand hand,
     double radius,
   ) {
-    if (pannedClockHand != null && widget.onChange != null) {
+    if (pannedClockHand == hand && widget.onChange != null) {
       var horizontalPos = AnalogClockHandHorizontalPosition.center;
       if (d.localPosition.dy < radius) {
         horizontalPos = AnalogClockHandHorizontalPosition.top;
@@ -260,7 +261,8 @@ class _AnalogClockHandPainter extends CustomPainter {
   final int hour;
   final int minute;
   final Function(DragStartDetails d, AnalogClockHand hand)? onClockHandPanStart;
-  final Function(DragUpdateDetails d, double radius)? onClockHandPanUpdate;
+  final Function(DragUpdateDetails d, AnalogClockHand hand, double radius)?
+      onClockHandPanUpdate;
 
   _AnalogClockHandPainter(
     this.context, {
@@ -310,7 +312,7 @@ class _AnalogClockHandPainter extends CustomPainter {
       handPaint,
       onPanUpdate: (d) {
         if (onClockHandPanUpdate != null) {
-          onClockHandPanUpdate!(d, r);
+          onClockHandPanUpdate!(d, AnalogClockHand.minute, r);
         }
       },
       onPanStart: (d) {
@@ -334,7 +336,7 @@ class _AnalogClockHandPainter extends CustomPainter {
       handPaint,
       onPanUpdate: (d) {
         if (onClockHandPanUpdate != null) {
-          onClockHandPanUpdate!(d, r);
+          onClockHandPanUpdate!(d, AnalogClockHand.hour, r);
         }
       },
       onPanStart: (d) {
